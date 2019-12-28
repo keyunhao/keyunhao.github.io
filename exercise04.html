@@ -79,7 +79,7 @@
     <h3>MENU</h3>
 	<p>I lerned how to build a LED light. If you want to know more about building a light, keep on going.
 	</p>
-	<h3>PICTURE:</h3>
+	<h4>PICTURE:</h4>
 	<img src="media/about/pi.png">
     <p>Here is the code:
     <pre>int LED = 7 ;
@@ -110,6 +110,44 @@ void setup (){
       digitalWrite (LED, LOW);
     }
         }</pre></p>
+    <p>And there is another way to switch the light. Which is to use a little joystick. There are two different lines. I simply use the angles to switch the light. It's pretty cool
+      <H4>PICTURE:</H4>
+    <img src="media/about/PICAT.png">
+    <p>Here's the code:</p>
+      <pre>int LED = 13;
+int LED1 = A1;
+int i = 0;
+int valx = 0;
+int valy = 0;
+void setup() {
+  
+  Serial.begin(9600);
+  Serial.println("What?");
+  pinMode(LED,OUTPUT);
+}
+
+void loop() {
+  
+ valx = analogRead(A2);
+ valy = analogRead(A3);
+ Serial.print("valx:");
+ Serial.print(valx);
+ Serial.print(", valy:");
+ Serial.println(valy);
+ delay(100);
+
+  if(valx>700){
+    digitalWrite(LED,HIGH);
+  }else{
+    digitalWrite(LED,LOW);
+
+    if(valy>600){
+    digitalWrite(LED,HIGH);
+  }else{
+    digitalWrite(LED,LOW);
+  }
+  }
+}</pre></p>
      
 	
 	<p>
