@@ -74,131 +74,51 @@
 	<!-- Insert your content here below! -->   
 
 
-     <h2>Output Device</h2>
+     <h2>Output Devices</h2>
     
     <h3>Menu</h3>
 	<p>
-	I have learned 
+	I have learned about output devices.If you wanna learn what I have learned,you are lucky,because I am gonna show you the stuff I have made.Keep reading!
+        
 	</p>
     
-    <h3>Text</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltp&gt;
-	Your text here
-	&lt/p&gt;</pre>
-	</p>
-	Result:
-	<p>
-	Your text here
-	</p>
+    <h3>PICTURES:</h3>
+        <img src="media/about/pppppppppppppppppp.png">
 	
-	<h3>Images</h3>
-	<p>
-	You can set it up with:
+	Here's the code:
 	<pre class="prettyprint linenums">
-	&ltp class="pic&gt;>&ltimg src="http://academy.cba.mit.edu/2012/students/menichinelli.massimo/exercise07/exercise07_02.jpg"&gt;
-	&ltlegend&gt;Here's the legend of the picture.&lt/legend&gt;
-	&lt/p&gt;</pre>
-	</p>
-	Result:
-	<p class="pic"><img src="http://academy.cba.mit.edu/2012/students/menichinelli.massimo/exercise07/exercise07_02.jpg">
-	<legend>Here's the legend of the picture.</legend>
-	</p>
-     
-	<h3>Code</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltpre class="prettyprint linenums"&gt;
-	Your code here
-	&lt/pre&gt;</pre>
 	
-	Result:
-	<pre class="prettyprint linenums">
-	for i in members:
-		print ""
-		print "USER:",members[i]
-		print "Loading connections..."
-		followers = load_connections([i], "followers")
-		friends = load_connections([i], "friends")
+	#include <Servo.h>
 
-		# Add edges...
-		print "Building the graph..."
+Servo theservo; 
+int degree = 0;
+int light = 0;
+int pot = 0;   
 
-		for f in followers:
-			for k in followers[f]:
-				graph.add_edge(k,f)
-	
-		for f in friends:
-			for k in friends[f]:
-				graph.add_edge(f,k)</pre>
-	</p>
-	
-	<h3>3D Model</h3>
-	<p>	
-	The model can be rotated and zoomed with the mouse/trackpad. You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltcanvas id="cv" width=640 height=480&gt;
-	It seems you are using an outdated browser that does not support canvas :-(
-	&lt/canvas&gt;
-	&ltscript type="text/javascript"&gt;
-		var canvas = document.getElementById('cv');
-		var viewer = new JSC3D.Viewer(canvas);
-		viewer.setParameter('SceneUrl','media/monkey.stl');
-		viewer.setParameter('ModelColor','#CAA618');
-		viewer.setParameter('BackgroundColor1','#E5D7BA');
-		viewer.setParameter('BackgroundColor2','#383840');
-		viewer.setParameter('RenderMode','flat');
-		viewer.setParameter('MipMapping','on');
-		viewer.setParameter('Definition','high');
-		viewer.setParameter('Renderer','webgl');
-		viewer.init();
-		viewer.update();
-	&lt/script&gt;</pre>
-	
-	You can set up the path to the 3D model (.stl/.obj) within this line:
-	<pre class="prettyprint linenums">
-	viewer.setParameter('SceneUrl','media/monkey.stl');</pre>
-	
-	Result:
-	<canvas id="cv" width=640 height=480>
-	It seems you are using an outdated browser that does not support canvas :-(
-	</canvas>
-	<script type="text/javascript">
-		var canvas = document.getElementById('cv');
-		var viewer = new JSC3D.Viewer(canvas);
-		viewer.setParameter('SceneUrl','media/monkey.stl');
-		viewer.setParameter('ModelColor','#CAA618');
-		viewer.setParameter('BackgroundColor1','#E5D7BA');
-		viewer.setParameter('BackgroundColor2','#383840');
-		viewer.setParameter('RenderMode','flat');
-		viewer.setParameter('MipMapping','on');
-		viewer.setParameter('Definition','high');
-		viewer.setParameter('Renderer','webgl');
-		viewer.init();
-		viewer.update();
-	</script> 
-    </p> 
+void setup() {
+  theservo.attach(9);  
+}
+
+void loop() {
+  light = analogRead(pot);
+  degree = map(light, 0, 1023, 0, 180);
+  theservo.write(degree);
+  delay(20);
+
+}
+	</pre>
+	<p><h8>I used a light sensor,which is an input device,to detect the degrees of the light.Then a motor,which is an output device,rotates with the degrees of the light which the light sensor detected.</h8></p>
+    <p><h1><div style="color: blue">
     
-    <h3>Download</h3>
-	<p>
-	You can set up a button for files to be downloaded with:
-	<pre class="prettyprint linenums">
-	&lta href="#"&gt;
-	&ltbutton type="button" class="btn btn-primary btn-lg">Download the file&lt/button&gt;
-	&lt/a&gt;</pre>
-	</p>
+    THAT'S</div><div style="color: greenyellow"> ALL</div>
+
+    
+    </h1></p>
 	
-	<p>
-	Result:
-	</p>
-	<p>
 	<a href="#">
-	<button type="button" class="btn btn-primary btn-lg">Download the file</button>
+	<button type="button" class="btn btn-primary btn-lg">Wanna click on me?</button>
 	</a>
-	</p>
+	
       
     <h3>Would you like to insert more style/elements?</h3>
       <p>
